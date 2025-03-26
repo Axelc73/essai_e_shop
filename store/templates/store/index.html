@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<section class="product-list">
+    {% for product in products %}
+        <div class="product-item">
+            <h2>{{ product.name }}</h2>
+            {% if product.thumbnail %}
+                <img src="{{ product.thumbnail.url }}" alt="{{ product.name }}" class="product-thumbnail">
+            {% else %}
+                <p>Pas d'image</p>                
+            {% endif %}
+            <h3>{{ product.price }} €</h3>
+            <h4>Il en reste: {{ product.stock}}</h4>
+        </div>
+    {% endfor %}
+</section>
+{% endblock %}
