@@ -12,7 +12,15 @@
 </head>
 <body>
     <header>
+    <a href="{% url 'index' %}">
         <h1>MEREL MOTOR'S</h1>
+    </a>
+
+    {% if not user.is_authenticated %}
+    <a href="{% url 'signup' %}">S'inscrire</a>
+
+    {% endif %}
+
     </header>
 
     <main>

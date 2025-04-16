@@ -10,7 +10,10 @@
                 <p>Pas d'image</p>                
             {% endif %}
             <h3>{{ product.price }} €</h3>
-            <h4>Il en reste: {{ product.stock}}</h4>
+            <h4>Il en reste: {{ product.stock }}</h4>
+            <div class="product-description">
+                <p>{{ product.description }}</p>
+            </div>
         </div>
     </section>
 {% endblock%}

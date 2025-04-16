@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'store',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -75,19 +76,27 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'marion',
+#         'USER': 'neondb_owner',
+#         'PASSWORD': 'npg_plGJnOb68skU',
+#         'HOST': 'ep-autumn-snow-a5c7705i-pooler.us-east-2.aws.neon.tech',
+#         'PORT': '5432',
+#         'OPTIONS': {
+#             'sslmode': 'require',
+#         },
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'marion',
-        'USER': 'neondb_owner',
-        'PASSWORD': 'npg_plGJnOb68skU',
-        'HOST': 'ep-autumn-snow-a5c7705i-pooler.us-east-2.aws.neon.tech',
-        'PORT': '5432',
-        'OPTIONS': {
-            'sslmode': 'require',
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',  # Ce sera le nom du fichier de la base de données SQLite
     }
 }
+
 
 #superuser : axel okok
 
@@ -134,3 +143,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "/media/"
+AUTH_USER_MODEL = "accounts.Shopper"

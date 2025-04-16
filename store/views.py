@@ -8,5 +8,5 @@ def index(request):
 
 def detail(request, slug):
     product = get_object_or_404(Product, slug=slug)
-    context = {'products': product}
+    context = {'product': product}
     return render(request, 'store/detail.html', context)

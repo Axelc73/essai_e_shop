@@ -59,3 +59,12 @@ h3 {
     text-align: center;
     margin: 10px;
   }
+
+.product-description {
+
+    flex: 0 0 15cm;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    padding: 1rem;
+    border-left: 1px solid #dddddd;
+}

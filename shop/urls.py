@@ -20,9 +20,11 @@ from store.views import index, detail
 from django.conf.urls.static import static
 from shop import settings
 import uuid
+from accounts.views import signup
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('signup/', signup, name="signup"),
      path('product/<str:slug>/', detail, name="product"),
     path('', index, name='index'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
